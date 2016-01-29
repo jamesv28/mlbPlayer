@@ -11,13 +11,12 @@ series on a modal which will compare and find the player with the better stats.
 
 ##Technologies Needed
 
-I am going to use bootstrap as as my webkit. I will attempt to use PostCSS.
-I will be using an api to get all player's historical data
-jQuery will be used to trigger sounds and animation
-Pivotal Tracker will be used to manage features
+I will be utilizing bootstrap as a quick front-end framework.  I 
+will also be trying to use PostCSS to pre-compile my stylesheets.  jQuery
+will be used for animating and activating sound bites.
 
 ###Key stats being looked at
 
-1. Batting Avg.
-2 years in the MLB
-3 wins above replacement 
+* Batting Avg.
+* years in the MLB
+* wins above replacement 
