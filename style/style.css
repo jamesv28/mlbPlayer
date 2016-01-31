@@ -1,0 +1,8 @@
+@font-face {
+    font-family: myFont;
+    src: url('BrannbollFS_PERSONAL.ttf');
+}
+
+html, body {
+    font-family: myFont;
+}
