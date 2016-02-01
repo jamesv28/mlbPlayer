@@ -7,9 +7,24 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<h1>MLB Player</h1>
-<h1>Decor</h1>
+<div class="row" id="startingPoint" >
+    <div class="container-fluid">
+        <h1 id="rotate" class="text-center" >Major League </h1>
+        <h2 class="text-center">Stat-off</h2>
+        <p class="text-center">Just enter in any MLB Player that you would like to review</p>
+        <div class="col-md-6 col-sm-6 col-sm-offset-3 col-md-offset-3" id="searchfield">
+            <form class="form-inline text-center">
+                <div class="form-group">
+                    <label for="playerName" class="control-label">Name</label>
+                    <input id="playerName" type="text" class="form-control" placeholder="Player Name">
+                </div>
+                <button type="submit" id="findPlayer" class="btn btn-default">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
 <script src="js/libs/jquery-1.12.0.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,8 +1,41 @@
 @font-face {
     font-family: myFont;
-    src: url('BrannbollFS_PERSONAL.ttf');
+    src: url('Batter-Up.ttf') format('truetype');
 }
 
-html, body {
+#startingPoint {
+    height: 60vh;
+    color: #ffffff;
+    background : -webkit-radial-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
+    background : -moz-linear-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
+    background : -o-linear-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
+    background : -ms-linear-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
+    background : -linear-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
+}
+
+#startingPoint h1 {
+    font-size: 80px;
+    font-variant: small-caps;
+    padding-top: 40px;
     font-family: myFont;
+}
+
+#startingPoint h2 {
+    font-size: 60px;
+    font-variant: small-caps;
+    font-family: myFont;
+}
+
+#startingPoint p {
+    padding-top: 20px;
+}
+
+#searchField {
+    padding-top: 20px;
+}
+
+#findPlayer:hover {
+    background: #000;
+    color: #ffffff;
+    border: #000000;
 }
