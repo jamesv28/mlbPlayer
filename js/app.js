@@ -1,5 +1,8 @@
 $('#findPlayer').on('click', function(e) {
     e.preventDefault();
+    var currentHr = 0;
+    var currentRbi = 0;
+    var currentObp = 0;
     var playerStats1 = $('#playerName1').val();
     var playerStats2 = $('#playerName2').val();
     var players = obj.playerInfo;
@@ -20,12 +23,16 @@ $('#findPlayer').on('click', function(e) {
                    + ' | ' + '<strong> Throws: </strong>' + players[i].throw_hand
                     + ' | ' + '<strong> Bats: </strong>' + players[i].bat_hand + ' | ' + players[i].team.market + ' ' + players[i].team.name ;
 
-            console.log('waka waka', players[i].seasons[0].teams[0].statistics.hitting);
-            console.log('seasons', players[i].seasons);
+            for (var p = 0; p<players[i].seasons.length;p++) {
+                var currentHr = players[i].seasons[p].teams[0].statistics.hitting.onbase.hr + currentHr;
+                var currentRbi = players[i].seasons[p].teams[0].statistics.hitting.rbi + currentRbi;
+                var currentObp = players[i].seasons[p].teams[0].statistics.hitting.obp + currentObp;
 
-            //for(var j = 0; j < players[i].seasons[j].teams[0].length; j++) {
-            //    console.log('hello',players[i].seasons[j].teams[0]);
-            //}
+            }
+                var avgHr = parseInt(currentHr/3);
+                var avgRbi = parseInt(currentRbi/3);
+                var avgObp = +currentObp/3;
+            console.log(avgHr,avgRbi,avgObp);
         }
         else if(playerStats2 === players[i].full_name) {
             $('#playerContent2').html('');
