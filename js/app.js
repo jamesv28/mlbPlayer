@@ -1,17 +1,32 @@
 $('#findPlayer').on('click', function(e) {
     e.preventDefault();
     var playerStats = $('#playerName').val();
-    for(var i = 0; i < obj.playerInfo.length; i++) {
-        if(playerStats === obj.playerInfo[i].full_name) {
+    var players = obj.playerInfo;
+    for(var i = 0; i < players.length; i++) {
+        if(playerStats === players[i].full_name) {
             $('#playerContent').html('');
             var string = '';
-            var fullName = document.createElement('h2');
+            var fullName = document.createElement('h1');
             var playerContent = document.getElementById('playerContent');
             playerContent.appendChild(fullName);
-            fullName.innerHTML = obj.playerInfo[i].full_name;
-            var position = document.createElement('p');
+            fullName.innerHTML = players[i].full_name;
+            var playerNameId = 'playerFullName';
+            fullName.setAttribute("id", playerNameId);
+            var position = document.createElement('h4');
             playerContent.appendChild(position);
-            position.innerHTML = '<strong>Position: </strong> ' + obj.playerInfo[i].position;
+            position.innerHTML = '#' + players[i].jersey_number + ' | ' + '<strong>Position: </strong> ' + players[i].position
+                   + ' | ' + '<strong> Throws: </strong>' + players[i].throw_hand
+                    + ' | ' + '<strong> Bats: </strong>' + players[i].bat_hand;
+            var birthPlace = document.createElement('p');
+            playerContent.appendChild(birthPlace);
+            birthPlace.innerHTML = "<strong> Birthplace: </strong>" + players[i].birthcity + ', ' + players[i].birthstate
+                + ', ' + players[i].birthcountry;
+            var college = document.createElement('p');
+            playerContent.appendChild(college);
+            college.innerHTML = "<strong>College: </strong>" + players[i].college;
+            var heightWeight = document.createElement('p');
+            playerContent.appendChild(heightWeight);
+            heightWeight.innerHTML = "<strong>Ht/Wt: </strong> " + players[i].height + ', ' + players[i].weight + 'lbs.';
         }
     }
 });
