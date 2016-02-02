@@ -24,15 +24,18 @@ $('#findPlayer').on('click', function(e) {
                     + ' | ' + '<strong> Bats: </strong>' + players[i].bat_hand + ' | ' + players[i].team.market + ' ' + players[i].team.name ;
 
             for (var p = 0; p<players[i].seasons.length;p++) {
-                var currentHr = players[i].seasons[p].teams[0].statistics.hitting.onbase.hr + currentHr;
-                var currentRbi = players[i].seasons[p].teams[0].statistics.hitting.rbi + currentRbi;
-                var currentObp = players[i].seasons[p].teams[0].statistics.hitting.obp + currentObp;
-
+                 currentHr = players[i].seasons[p].teams[0].statistics.hitting.onbase.hr + currentHr;
+                 currentRbi = players[i].seasons[p].teams[0].statistics.hitting.rbi + currentRbi;
+                 currentObp = players[i].seasons[p].teams[0].statistics.hitting.obp + currentObp;
             }
                 var avgHr = parseInt(currentHr/3);
                 var avgRbi = parseInt(currentRbi/3);
                 var avgObp = +currentObp/3;
             console.log(avgHr,avgRbi,avgObp);
+
+            avghr1 = document.createElement('p');
+            playerContent.appendChild(avghr1);
+            avghr1.innerHTML = '<strong> Avergae Home Runs: </strong>' + avgHr;
         }
         else if(playerStats2 === players[i].full_name) {
             $('#playerContent2').html('');
