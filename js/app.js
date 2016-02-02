@@ -43,7 +43,7 @@ $('#findPlayer').on('click', function(e) {
             var playerContent2 = document.getElementById('playerContent2');
             playerContent2.appendChild(fullName2);
             fullName2.innerHTML = players[i].full_name;
-            var position2 = document.createElement('jh4');
+            var position2 = document.createElement('h4');
             playerContent2.appendChild(position2);
             position2.innerHTML = '#' + players[i].jersey_number + ' | ' + '<strong>Position: </strong> ' + players[i].position
                 + ' | ' + '<strong> Throws: </strong>' + players[i].throw_hand
