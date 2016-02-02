@@ -12,11 +12,13 @@
     ,    <h1 id="rotate" class="text-center" >Major League </h1>
         <h2 class="text-center">Stat Finder</h2>
         <p class="text-center">Just enter in any MLB Player that you would like to review</p>
-        <div class="col-md-6 col-sm-6 col-sm-offset-3 col-md-offset-3" id="searchfield">
+        <div class="col-md-8 col-sm-8 col-sm-offset-2 col-md-offset-32 id="searchfield">
             <form class="form-inline text-center">
                 <div class="form-group">
-                    <label for="playerName" class="control-label">Name</label>
-                    <input id="playerName" type="text" class="form-control" placeholder="Player Name">
+                    <label for="playerName1" class="control-label">Name</label>
+                    <input id="playerName1" type="text" class="form-control" placeholder="Player Name">
+                    <label for="playerName2" class="control-label">Vs.</label>
+                    <input id="playerName2" type="text" class="form-control" placeholder="player 2 Name">
                 </div>
                 <button type="submit" id="findPlayer" class="btn btn-default" onclick="play()">Search</button>
                 <audio id="audio" src="sounds/214989__amishrob__baseballhitandcrowdcheer.mp3"></audio>
@@ -26,7 +28,10 @@
 </div>
 <div class="row">
     <div class="container-fluid">
-        <div class=" col-md-6 col-sm-6 col-sm-offset-3 col-md-offset-3" id="playerContent">
+        <div class=" col-md-6 col-sm-6 " id="playerContent1">
+
+        </div>
+        <div class="col-sm-6 col-md-6" id="playerContent2">
 
         </div>
     </div>
