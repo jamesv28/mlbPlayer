@@ -30,6 +30,11 @@ $('#findPlayer').on('click', function(e) {
         }
     }
 });
+
+function play() {
+    var audio = document.getElementById('audio');
+    audio.play();
+}
     $(document).ready(function () {
 
         console.log(obj.playerInfo);
