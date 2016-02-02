@@ -12,8 +12,9 @@ strong {
 }
 
 #startingPoint {
-    height: 60vh;
+    height: 50vh;
     color: #ffffff;
+    text-shadow: 1px 1px rgba(0,0,0,.8);
     background : -webkit-radial-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
     background : -moz-linear-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
     background : -o-linear-gradient(center center,ellipse cover, rgb(214, 15, 95) 00%, rgb(219, 31, 69) 100%);
@@ -24,7 +25,7 @@ strong {
 #startingPoint h1 {
     font-size: 80px;
     font-variant: small-caps;
-    padding-top: 40px;
+    padding-top: 20px;
     font-family: myFont;
 }
 

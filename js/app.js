@@ -16,7 +16,7 @@ $('#findPlayer').on('click', function(e) {
             playerContent.appendChild(position);
             position.innerHTML = '#' + players[i].jersey_number + ' | ' + '<strong>Position: </strong> ' + players[i].position
                    + ' | ' + '<strong> Throws: </strong>' + players[i].throw_hand
-                    + ' | ' + '<strong> Bats: </strong>' + players[i].bat_hand;
+                    + ' | ' + '<strong> Bats: </strong>' + players[i].bat_hand + ' | ' + players[i].team.market + ' ' + players[i].team.name ;
             var birthPlace = document.createElement('p');
             playerContent.appendChild(birthPlace);
             birthPlace.innerHTML = "<strong> Birthplace: </strong>" + players[i].birthcity + ', ' + players[i].birthstate
