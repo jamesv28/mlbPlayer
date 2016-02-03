@@ -1,5 +1,9 @@
 $('#findPlayer').on('click', function(e) {
     e.preventDefault();
+    var avgHr = 0;
+    var avgRbi = 0;
+    var avgObp = 0;
+    var batAvg = 0;
     var playerStats1 = $('#playerName1').val();
     var playerStats2 = $('#playerName2').val();
     for(var i = 0; i < players.length; i++) {
@@ -17,11 +21,17 @@ $('#findPlayer').on('click', function(e) {
             playerContent.appendChild(position);
             generalInfo(position,i);
             getStats(i);
-            var avgHr = parseInt(currentHr/3);
-            var avgRbi = parseInt(currentRbi/3);
-            var avgObp = Math.round(+currentObp/3 * 100);
+             avgHr = parseInt(currentHr/ players[i].seasons.length);
+             avgRbi = parseInt(currentRbi/3);
+             avgObp = +currentObp/3;
+            avgObp = avgObp.toFixed(3);
+             batAvg = currentBatAvg/3 ;
+            batAvg = batAvg.toFixed(3);
             //console.log(avgHr,avgRbi,avgObp);
 
+            var batAvg1 = document.createElement('p');
+            playerContent.appendChild(batAvg1);
+            batAvg1.innerHTML = "<strong>Career Bat Avg. </strong>" + batAvg;
             avghr1 = document.createElement('p');
             playerContent.appendChild(avghr1);
             avghr1.innerHTML = '<strong> Avergae Home Runs: </strong>' + avgHr;
@@ -34,6 +44,7 @@ $('#findPlayer').on('click', function(e) {
         }
         else if(playerStats2 === players[i].full_name) {
             $('#playerContent2').html('');
+
             var fullName2 = document.createElement('h1');
             var playerContent2 = document.getElementById('playerContent2');
             playerContent2.appendChild(fullName2);
@@ -42,10 +53,16 @@ $('#findPlayer').on('click', function(e) {
             playerContent2.appendChild(position2);
             generalInfo(position2,i);
             getStats(i);
-            var avgHr = parseInt(currentHr/3);
-            var avgRbi = parseInt(currentRbi/3);
-            var avgObp = Math.round(+currentObp/3 * 100);
+             avgHr = parseInt(currentHr/3);
+             avgRbi = parseInt(currentRbi/3);
+            avgObp = +currentObp/3;
+            avgObp = avgObp.toFixed(3);
+            batAvg = currentBatAvg/4 ;
+            batAvg = batAvg.toFixed(3);
 
+            batAvg2 = document.createElement('p');
+            playerContent2.appendChild(batAvg2);
+            batAvg2.innerHTML = "<strong>Career Bat Avg. </strong>" + batAvg;
             avghr2 = document.createElement('p');
             playerContent2.appendChild(avghr2);
             avghr2.innerHTML = '<strong> Avergae Home Runs: </strong>' + avgHr;
