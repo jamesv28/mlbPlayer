@@ -20,6 +20,7 @@ $('#findPlayer').on('click', function(e) {
 
             playerContent.appendChild(position);
             generalInfo(position,i);
+            whoHeIs(playerContent,i);
             getStats(i);
              avgHr = parseInt(currentHr/ players[i].seasons.length);
              avgRbi = parseInt(currentRbi/3);
@@ -52,6 +53,7 @@ $('#findPlayer').on('click', function(e) {
             var position2 = document.createElement('h5');
             playerContent2.appendChild(position2);
             generalInfo(position2,i);
+            whoHeIs(playerContent2,i);
             getStats(i);
              avgHr = parseInt(currentHr/3);
              avgRbi = parseInt(currentRbi/3);
@@ -89,13 +91,3 @@ $('#findPlayer').on('click', function(e) {
          * mathew Carpenter
          */
 
-//var birthPlace = document.createElement('p');
-//playerContent.appendChild(birthPlace);
-//birthPlace.innerHTML = "<strong> Birthplace: </strong>" + players[i].birthcity + ', ' + players[i].birthstate
-//    + ', ' + players[i].birthcountry;
-//var college = document.createElement('p');
-//playerContent.appendChild(college);
-//college.innerHTML = "<strong>College: </strong>" + players[i].college;
-//var heightWeight = document.createElement('p');
-//playerContent.appendChild(heightWeight);
-//heightWeight.innerHTML = "<strong>Ht/Wt: </strong> " + players[i].height + ', ' + players[i].weight + 'lbs.';
