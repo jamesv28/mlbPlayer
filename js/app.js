@@ -1,17 +1,13 @@
 $('#findPlayer').on('click', function(e) {
     e.preventDefault();
-    var currentHr = 0;
-    var currentRbi = 0;
-    var currentObp = 0;
     var playerStats1 = $('#playerName1').val();
     var playerStats2 = $('#playerName2').val();
-    var players = obj.playerInfo;
     for(var i = 0; i < players.length; i++) {
         if(playerStats1 === players[i].full_name) {
             $('#playerContent1').html('');
-            var string = '';
-            var fullName = document.createElement('h1');
             var playerContent = document.getElementById('playerContent1');
+
+            var fullName = document.createElement('h1');
 
             playerContent.appendChild(fullName);
             fullName.innerHTML = players[i].full_name;
@@ -19,15 +15,8 @@ $('#findPlayer').on('click', function(e) {
             var position = document.createElement('h4');
 
             playerContent.appendChild(position);
-            position.innerHTML = '#' + players[i].jersey_number + ' | ' + '<strong>Position: </strong> ' + players[i].position
-                   + ' | ' + '<strong> Throws: </strong>' + players[i].throw_hand
-                    + ' | ' + '<strong> Bats: </strong>' + players[i].bat_hand + ' | ' + players[i].team.market + ' ' + players[i].team.name ;
-
-            for (var p = 0; p<players[i].seasons.length;p++) {
-                 currentHr = players[i].seasons[p].teams[0].statistics.hitting.onbase.hr + currentHr;
-                 currentRbi = players[i].seasons[p].teams[0].statistics.hitting.rbi + currentRbi;
-                 currentObp = players[i].seasons[p].teams[0].statistics.hitting.obp + currentObp;
-            }
+            generalInfo(position,i);
+            getStats(i);
                 var avgHr = parseInt(currentHr/3);
                 var avgRbi = parseInt(currentRbi/3);
                 var avgObp = +currentObp/3;
@@ -45,29 +34,14 @@ $('#findPlayer').on('click', function(e) {
             fullName2.innerHTML = players[i].full_name;
             var position2 = document.createElement('h4');
             playerContent2.appendChild(position2);
-            position2.innerHTML = '#' + players[i].jersey_number + ' | ' + '<strong>Position: </strong> ' + players[i].position
-                + ' | ' + '<strong> Throws: </strong>' + players[i].throw_hand
-                + ' | ' + '<strong> Bats: </strong>' + players[i].bat_hand + ' | ' + players[i].team.market + ' ' + players[i].team.name ;
-
+            generalInfo(position2,i);
+            getStats(i);
 
         } else {
             console.log("this isn't working")
         }
     }
 });
-
-function play() {
-    var audio = document.getElementById('audio');
-    audio.play();
-}
-    $(document).ready(function () {
-
-        //console.log(obj.playerInfo);
-
-
-
-
-
 
         /**
          * players:
@@ -78,7 +52,6 @@ function play() {
          * Nolan Arenado
          * mathew Carpenter
          */
-}); //end of jQuery script
 
 //var birthPlace = document.createElement('p');
 //playerContent.appendChild(birthPlace);
