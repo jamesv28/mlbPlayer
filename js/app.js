@@ -17,14 +17,20 @@ $('#findPlayer').on('click', function(e) {
             playerContent.appendChild(position);
             generalInfo(position,i);
             getStats(i);
-                var avgHr = parseInt(currentHr/3);
-                var avgRbi = parseInt(currentRbi/3);
-                var avgObp = +currentObp/3;
-            console.log(avgHr,avgRbi,avgObp);
+            var avgHr = parseInt(currentHr/3);
+            var avgRbi = parseInt(currentRbi/3);
+            var avgObp = Math.round(+currentObp/3 * 100);
+            //console.log(avgHr,avgRbi,avgObp);
 
             avghr1 = document.createElement('p');
             playerContent.appendChild(avghr1);
             avghr1.innerHTML = '<strong> Avergae Home Runs: </strong>' + avgHr;
+            var avgRbi1 = document.createElement('p');
+            playerContent.appendChild(avgRbi1);
+            avgRbi1.innerHTML = '<strong> Average RBI: </strong>' + avgRbi;
+            var avgObp1 = document.createElement('p');
+            playerContent.appendChild(avgObp1);
+            avgObp1.innerHTML = '<strong>Avg. On Base %: </strong>' + avgObp;
         }
         else if(playerStats2 === players[i].full_name) {
             $('#playerContent2').html('');

@@ -3,6 +3,12 @@ var currentRbi = 0;
 var currentObp = 0;
 var players = obj.playerInfo;
 
+
+//function create(content, id, name, elem) {
+//    content = document.getElementById('id');
+//    name = document.createElement('elem');
+//}
+
 function play() {
     var audio = document.getElementById('audio');
     audio.play();
@@ -18,8 +24,5 @@ function getStats(index) {
         currentRbi = players[index].seasons[p].teams[0].statistics.hitting.rbi + currentRbi;
         currentObp = players[index].seasons[p].teams[0].statistics.hitting.obp + currentObp;
     }
-    var avgHr = parseInt(currentHr / 3);
-    var avgRbi = parseInt(currentRbi / 3);
-    var avgObp = +currentObp / 3;
-    console.log(avgHr, avgRbi, avgObp);
 }
+
