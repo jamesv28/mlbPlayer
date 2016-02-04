@@ -21,7 +21,7 @@ function whoHeIs(content, index) {
         + ', ' + players[index].birthcountry;
     var college = document.createElement('p');
     content.appendChild(college);
-    college.innerHTML = "<strong>College: </strong>" + players[index].college;
+    //college.innerHTML = "<strong>College: </strong>" + players[index].college;
     var heightWeight = document.createElement('p');
     content.appendChild(heightWeight);
     heightWeight.innerHTML = "<strong>Ht/Wt: </strong> " + players[index].height + ', ' + players[index].weight + 'lbs.';
@@ -41,8 +41,6 @@ function getStats(index) {
         currentRbi = players[index].seasons[p].teams[0].statistics.hitting.rbi + currentRbi;
         currentObp = players[index].seasons[p].teams[0].statistics.hitting.obp + currentObp;
         currentBatAvg = players[index].seasons[p].teams[0].statistics.hitting.avg + currentBatAvg;
-        //currentFpct = players[index].seasons[p].teams[0].statistics.fielding.fpct + currentFpct;
-        //console.log('wake up',players[0].seasons[0].teams[0]);
     }
 }
 
