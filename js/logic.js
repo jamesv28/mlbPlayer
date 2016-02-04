@@ -26,7 +26,15 @@ function whoHeIs(content, index) {
     content.appendChild(heightWeight);
     heightWeight.innerHTML = "<strong>Ht/Wt: </strong> " + players[index].height + ', ' + players[index].weight + 'lbs.';
 }
-
+function rankTheStats(stat1, stat2, text1, text2) {
+    if(stat1 < stat2) {
+        text1.className = 'text-danger';
+        text2.className = 'text-success';
+    } else {
+        text1.className = 'text-success';
+        text2.className = 'text-danger';
+    }
+}
 function getStats(index) {
     for (var p = 0; p < players[index].seasons.length; p++) {
         currentHr = players[index].seasons[p].teams[0].statistics.hitting.onbase.hr + currentHr;

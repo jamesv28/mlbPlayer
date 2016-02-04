@@ -32,7 +32,8 @@ $('#findPlayer').on('click', function(e) {
 
             var batAvg1 = document.createElement('p');
             playerContent.appendChild(batAvg1);
-            batAvg1.innerHTML = "<strong>Career Bat Avg. </strong>" + batAvg;
+            var batAvgplayer1 = batAvg;
+            batAvg1.innerHTML = "<strong>Career Bat Avg. </strong>" + batAvgplayer1;
             avghr1 = document.createElement('p');
             playerContent.appendChild(avghr1);
             avghr1.innerHTML = '<strong> Avergae Home Runs: </strong>' + avgHr;
@@ -45,7 +46,6 @@ $('#findPlayer').on('click', function(e) {
         }
         else if(playerStats2 === players[i].full_name) {
             $('#playerContent2').html('');
-
             var fullName2 = document.createElement('h1');
             var playerContent2 = document.getElementById('playerContent2');
             playerContent2.appendChild(fullName2);
@@ -62,9 +62,12 @@ $('#findPlayer').on('click', function(e) {
             batAvg = currentBatAvg/4 ;
             batAvg = batAvg.toFixed(3);
 
+
+
             batAvg2 = document.createElement('p');
             playerContent2.appendChild(batAvg2);
-            batAvg2.innerHTML = "<strong>Career Bat Avg. </strong>" + batAvg;
+            var batAvgplayer2 = batAvg;
+            batAvg2.innerHTML = "<strong>Career Bat Avg. </strong>" + batAvgplayer2;
             avghr2 = document.createElement('p');
             playerContent2.appendChild(avghr2);
             avghr2.innerHTML = '<strong> Avergae Home Runs: </strong>' + avgHr;
@@ -75,6 +78,12 @@ $('#findPlayer').on('click', function(e) {
             playerContent2.appendChild(avgObp2);
             avgObp2.innerHTML = '<strong>Avg. On Base %: </strong>' + avgObp;
 
+            rankTheStats(batAvgplayer1,batAvgplayer2,batAvg1,batAvg2);
+            //if(batAvgplayer1 > batAvgplayer2) {
+            //    batAvgplayer1.addClass('text-success');
+            //} else {
+            //    batAvg2.className = ('text-success';
+            //}
         } else {
             console.log("this isn't working")
         }
